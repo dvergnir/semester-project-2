@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/dvergnir/semester-project-2#readme",
   "devDependencies": {
+    "eslint": "^8.33.0",
     "prettier": "^2.8.3"
   }
 }
