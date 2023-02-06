@@ -5,6 +5,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src/**/*.js",
     "prepare": "husky install"
@@ -28,10 +30,13 @@
   },
   "homepage": "https://github.com/dvergnir/semester-project-2#readme",
   "devDependencies": {
+    "bootstrap": "^5.2.3",
     "eslint": "^8.33.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
-    "prettier": "^2.8.3"
+    "live-server": "^1.2.2",
+    "prettier": "^2.8.3",
+    "sass": "^1.58.0"
   },
   "lint-staged": {
     "*.js": [
