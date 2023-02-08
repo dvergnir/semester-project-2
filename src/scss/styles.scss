@@ -1,4 +1,9 @@
-// Custom scss
+//Custom scss
+
 @import "../../node_modules/bootstrap/scss/functions";
-// Original Bootstrap scss files
+
+@import "variables";
+@import "utilities";
+
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/bootstrap/scss/utilities/api.scss";
