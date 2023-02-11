@@ -8,6 +8,10 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../../node_modules/bootstrap/scss/utilities/api.scss";
 
+:root {
+  --bs-font-sans-serif: mr-eaves-xl-modern, sans-serif;
+}
+
 .logo {
   width: 100%;
   max-width: 300px;

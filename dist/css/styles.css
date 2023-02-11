@@ -26207,6 +26207,10 @@ fieldset:disabled .btn {
     display: none !important;
   }
 }
+:root {
+  --bs-font-sans-serif: mr-eaves-xl-modern, sans-serif;
+}
+
 .logo {
   width: 100%;
   max-width: 300px;
