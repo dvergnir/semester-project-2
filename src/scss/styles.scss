@@ -28,3 +28,19 @@
   -moz-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.75);
 }
+
+.cta {
+  background-color: #e8c847;
+  transform: scale(0.95);
+  -webkit-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.cta:hover {
+  background-color: #e8a847;
+  transform: scale(1);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}

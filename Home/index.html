@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Home | SwiftAuction</title>
     <link rel="stylesheet" href="https://use.typekit.net/lez3exy.css" />
     <link rel="stylesheet" href="./../dist/css/styles.css" />
   </head>
@@ -17,6 +17,7 @@
               ><img
                 src="./../assets/images/SwiftAuction_logo.png"
                 class="logo"
+                alt="Logo. SwiftAuction, 1-2-3 Sold!"
               />
             </a>
           </div>
@@ -33,22 +34,156 @@
           </div>
         </div>
       </div>
-      <div class="pt-4">
-        <p class="text-center mx-auto w-100 text-primary display-7">
-          Welcome to SwiftAuction!
-          <a
-            href="./Home/index.html"
-            class="p-2 text-info text-decoration-underline pe-auto"
-            >Sign in</a
-          >
-          or
-          <a href="#" class="p-2 text-info text-decoration-underline pe-auto"
-            >Register</a
-          >
-          to view, and bid on listings!
-        </p>
-      </div>
+      <nav class="navbar">Navigation here</nav>
     </header>
+    <main>
+      <h1 class="h1 text-center mt-5 text-primary">Listings</h1>
+      <div class="container mb-5">
+        <div class="row mx-auto">
+          <div class="col text-center">
+            <div
+              class="card mx-auto my-5 bg-secondary py-4"
+              style="width: 18rem"
+            >
+              <img
+                class="card-img-top p-4"
+                src="./../assets/images/dumimage.png"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h2 class="card-title h2 text-primary">Coffee table</h2>
+                <p class="card-text font-italic display-7 text-primary">
+                  Current bid: $100
+                </p>
+                <p class="card-text font-italic display-7 text-primary">
+                  Time left: 00:00
+                </p>
+                <a
+                  href="#"
+                  class="display-7 text-info"
+                  data-bs-toggle="modal"
+                  data-bs-target="#viewItemModal"
+                  >View this item</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="viewItemModal"
+        tabindex="-1"
+        role="dialog"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content bg-secondary border-primary p-4">
+            <div class="modal-header">
+              <h2
+                class="modal-title display-7 text-primary"
+                id="exampleModalLongTitle"
+              >
+                Coffe table
+              </h2>
+              <button
+                type="button"
+                class="close text-bg-primary"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div
+                id="modalCarousel"
+                class="carousel slide"
+                data-ride="carousel"
+              >
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img
+                      class="d-block w-100"
+                      src="./../assets/images/dumimage.png"
+                      alt="First slide"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      class="d-block w-100"
+                      src="./../assets/images/dumimage.png"
+                      alt="Second slide"
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <img
+                      class="d-block w-100"
+                      src="./../assets/images/SwiftAuction_logo.png"
+                      alt="Third slide"
+                    />
+                  </div>
+                </div>
+                <a
+                  class="carousel-control-prev"
+                  href="#modalCarousel"
+                  role="button"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon text-bg-primary"
+                    aria-hidden="true"
+                  >
+                  </span>
+                  <span class="sr-only"></span>
+                </a>
+                <a
+                  class="carousel-control-next"
+                  href="#modalCarousel"
+                  role="button"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon text-bg-primary"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="sr-only"></span>
+                </a>
+              </div>
+
+              <p class="text-primary">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi utipsum L * W * H : 100x80x60
+              </p>
+              <h3 class="text-primary">Current Bids:</h3>
+            </div>
+            <div class="modal-footer p-3">
+              <form class="w-100">
+                <label
+                  for="input-bid"
+                  class="d-block text-center text-primary display-7"
+                  >Make a bid</label
+                >
+                <input
+                  type="number"
+                  name="input-bid"
+                  class="mx-auto d-block my-3"
+                  id="input-bid"
+                />
+                <button
+                  type="button"
+                  class="btn cta text-primary w-50 border-primary form-control mx-auto d-block"
+                >
+                  Place bid
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
     <footer
       class="bg-primary text-secondary text-center text-lg-start fixed-bottom"
     >
@@ -61,5 +196,6 @@
       </div>
       <!-- Copyright -->
     </footer>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
