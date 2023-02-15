@@ -12,6 +12,14 @@
   --bs-font-sans-serif: mr-eaves-xl-modern, sans-serif;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
+button {
+  font-family: europa, sans-serif !important;
+  font-size: 1.5rem !important;
+}
 .logo {
   width: 100%;
   max-width: 300px;
