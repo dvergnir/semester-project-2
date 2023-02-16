@@ -18,8 +18,9 @@ function renderAuction(auctionData) {
 </div>`;
   container.querySelector("h2").innerText = "Coffee table";
   container.querySelector(".card-text").innerText = "Time left: 00:00";
-  return container;
+  document.body.append(container);
 }
 
-const thumb = renderAuction("test");
-document.body.append(thumb);
+export function renderAuctions(listings) {
+  listings.foreach(renderAuction);
+}
