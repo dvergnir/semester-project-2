@@ -6,7 +6,7 @@ import { scrollToTop } from "./utilities.js/buttonToTop.mjs";
 export function router() {
   const path = window.location.pathname;
 
-  if (path === "/index.html") {
+  if (path === "/index.html" || "./index.html") {
     loginUser();
     registerUser();
     setupListings();
