@@ -58,11 +58,18 @@
       <h1 class="h1 text-center mt-5 text-primary">Listings</h1>
       <section>
         <div class="container">
-          <div class="row mx-auto listings-content"></div>
+          <div class="row mx-auto listings-container"></div>
         </div>
       </section>
+      <!-- Scroll to top button -->
+      <button
+        type="button"
+        class="btn btn-danger btn-floating"
+        id="btn-back-to-top"
+      >
+        Back to top
+      </button>
     </main>
-    <footer></footer>
     <footer
       class="bg-primary text-secondary text-center text-lg-start fixed-bottom"
     >
@@ -73,7 +80,6 @@
           >github.com/dvergnir</a
         >
       </div>
-      <!-- Copyright -->
     </footer>
     <!-- Register modal -->
     <div
@@ -227,7 +233,7 @@
                   minlength="8"
                 />
               </div>
-              <div class="error-container text-primary">
+              <div class="text-primary" id="cred-error">
                 Wrong email or password. Please try again!
               </div>
               <button
@@ -244,6 +250,5 @@
     </div>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./src/js/index.mjs" type="module"></script>
-    <script src="./src/js/auctions/listings.mjs" type="module"></script>
   </body>
 </html>

@@ -1,10 +1,10 @@
 import { API_LISTINGS_URL } from "../constants/constants.mjs";
 import { getAuctions } from "../api/getAuctions.mjs";
-import { renderAuctions } from "./render.js";
+import { renderAuctions } from "./render.mjs";
+import { setSearchListener } from "../listeners/setSearchListener.mjs";
 
-async function auctionListings() {
+export async function setupListings() {
   const listings = await getAuctions(API_LISTINGS_URL);
   renderAuctions(listings);
+  setSearchListener(listings);
 }
-
-auctionListings();

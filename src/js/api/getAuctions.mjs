@@ -6,8 +6,7 @@ export async function getAuctions(url) {
         "Content-Type": "application/json",
       },
     });
-    const auctionData = await response.json();
-    console.log(auctionData);
+    return await response.json();
   } catch (error) {
     console.log(error);
   }
