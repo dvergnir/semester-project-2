@@ -12,9 +12,20 @@ import * as storage from "../storage/index.mjs";
 export function loginError(response) {
   if (!response.ok) {
     storage.clear();
-    const loginModal = document.querySelector(".error-container");
-    loginModal.style.display = "block";
+    const credError = document.getElementById("cred-error");
+    credError.style.display = "block";
   } else if (response.ok) {
     window.location.replace("./Home/index.html");
+  }
+}
+
+export function emptyListingsCheck(listings) {
+  if (listings.length <= 0) {
+    const listingsContainer = document.querySelector(".listings-container");
+    listingsContainer.innerHTML = "";
+    listingsContainer.innerHTML += `<div class="text-primary text-center" id="listings-error">
+    <p>
+    There are no auctions matching your search.</p>
+  </div>`;
   }
 }

@@ -1,6 +1,4 @@
-const url = "https://api.noroff.dev/api/v1" + "/auction/listings";
-
-export async function getAuctions() {
+export async function getAuctions(url) {
   try {
     const response = await fetch(url, {
       method: "GET",
@@ -8,9 +6,7 @@ export async function getAuctions() {
         "Content-Type": "application/json",
       },
     });
-    //return await response.json();
-    const auctionData = await response.json();
-    console.log(auctionData);
+    return await response.json();
   } catch (error) {
     console.log(error);
   }
