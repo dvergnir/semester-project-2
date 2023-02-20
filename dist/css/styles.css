@@ -26253,8 +26253,18 @@ button {
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-.error-container {
+#cred-error {
   display: none;
+}
+
+body {
+  margin-bottom: 100px;
+}
+
+#btn-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */
