@@ -1,6 +1,5 @@
-const btnTop = document.getElementById("btn-back-to-top");
-
 export function scrollToTop() {
+  const btnTop = document.getElementById("btn-back-to-top");
   window.onscroll = function () {
     scrollFunction();
   };
@@ -16,7 +15,7 @@ export function scrollToTop() {
     }
   }
 
-  mybutton.addEventListener("click", backToTop);
+  btnTop.addEventListener("click", backToTop);
 
   function backToTop() {
     document.body.scrollTop = 0;

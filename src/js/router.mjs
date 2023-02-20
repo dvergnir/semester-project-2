@@ -13,5 +13,6 @@ export function router() {
     scrollToTop();
   } else if (path === "/Home/index.html") {
     setupListings();
+    scrollToTop();
   }
 }

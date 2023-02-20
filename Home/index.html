@@ -40,9 +40,6 @@
       <h1 class="h1 text-center mt-5 text-primary">Listings</h1>
       <section>
         <div class="container">
-          <div class="text-primary" id="listings-error">
-            There are no auctions matching your search.
-          </div>
           <div class="row mx-auto listings-container"></div>
         </div>
       </section>
@@ -59,6 +56,13 @@
       </div>
       <!-- Copyright -->
     </footer>
+    <button
+      type="button"
+      class="btn btn-primary btn-floating"
+      id="btn-back-to-top"
+    >
+      ^
+    </button>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./../src/js/index.mjs" type="module"></script>
     <script src="./../src/js/auctions/setup.mjs" type="module"></script>
