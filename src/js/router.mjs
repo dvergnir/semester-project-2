@@ -11,7 +11,7 @@ export function router() {
     registerUser();
     setupListings();
     scrollToTop();
-  } else if (path === "/Home/index.html") {
+  } else if (path === "/Home/index.html" || "./Home/index.html") {
     setupListings();
     scrollToTop();
   }
