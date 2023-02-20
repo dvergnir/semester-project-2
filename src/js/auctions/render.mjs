@@ -1,6 +1,7 @@
 function renderAuction(auctionData) {
   const container = document.createElement("div");
   const listingsContainer = document.querySelector(".listings-container");
+  const { media } = auctionData;
   container.classList.add(
     "col",
     "mx-auto",
@@ -37,7 +38,7 @@ function renderAuction(auctionData) {
     </div>
   </div>
 </div>`;
-  container.querySelector("img").src = auctionData.media;
+  container.querySelector("img").src = media[0];
   container.querySelector("h2").innerText = auctionData.title;
   container.querySelector(".card-bid").innerText =
     "Bids: " + auctionData._count.bids;

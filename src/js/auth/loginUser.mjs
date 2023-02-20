@@ -32,7 +32,6 @@ export function loginUser() {
       email: email,
       password: password,
     };
-    console.log(email);
     login(API_LOGIN_URL, user, method);
   });
 }
