@@ -15,7 +15,7 @@ export function loginError(response) {
     const credError = document.getElementById("cred-error");
     credError.style.display = "block";
   } else if (response.ok) {
-    window.location.replace("./Home/index.html");
+    window.location.replace("./home.html");
   }
 }
 
