@@ -67,3 +67,187 @@
     <script src="./src/js/index.mjs" type="module"></script>
   </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | SwiftAuction</title>
+    <link rel="stylesheet" href="https://use.typekit.net/lez3exy.css" />
+    <link rel="stylesheet" href="./dist/css/styles.css" />
+  </head>
+  <body>
+    <header class="p-2 border-bottom border-2 border-primary">
+      <div class="container d-flex justify-content-start">
+        <div class="row">
+          <div class="col-sm">
+            <a class="" href="#"
+              ><img
+                src="./assets/images/SwiftAuction_logo.png"
+                class="logo"
+                alt="Logo. SwiftAuction, 1-2-3 Sold!"
+              />
+            </a>
+          </div>
+          <div class="col-sm">
+            <form class="">
+              <input
+                class="form-control border-primary d-block mt-2 w-auto"
+                id="searchbar"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+      <nav class="navbar">
+        Navigation here
+        <a
+          class="p-2 text-info text-decoration-underline pe-auto"
+          data-bs-toggle="modal"
+          data-bs-target="#viewCreateModal"
+          >Create a listing</a
+        >
+      </nav>
+    </header>
+    <main>
+      <h1 class="h1 text-center mt-5 text-primary">Listings</h1>
+      <section>
+        <div class="container">
+          <div class="row mx-auto listings-container"></div>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="bg-primary text-secondary text-center text-lg-start fixed-bottom"
+    >
+      <!-- Copyright -->
+      <div class="text-center p-3">
+        © 2023 Copyright:
+        <a class="text-secondary" href="https://github.com/dvergnir"
+          >github.com/dvergnir</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Scroll to top btn -->
+    <button
+      type="button"
+      class="btn btn-primary btn-floating"
+      id="btn-back-to-top"
+    >
+      ^
+    </button>
+    <!--Create Modal-->
+    <div
+      class="modal fade"
+      id="viewCreateModal"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bg-secondary border-primary p-4">
+          <div class="modal-header text-center">
+            <h2
+              class="modal-title display-7 text-primary mx-auto"
+              id="exampleModalLongTitle"
+            >
+              Create listing
+            </h2>
+            <button
+              type="button"
+              class="close text-bg-primary"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-primary">
+            <form
+              method="POST"
+              id="post-auction"
+              class="text-start d-flex flex-column align-items-center mt-5"
+            >
+              <div class="mb-3 mx-6 w-75">
+                <label for="title" class="form-label">Title *</label>
+                <input
+                  name="title"
+                  type="text"
+                  id="title"
+                  class="form-control"
+                  placeholder="Title"
+                  required
+                />
+              </div>
+              <div class="mb-3 mx-6 w-75">
+                <label for="description" class="form-label">Description</label>
+                <textarea
+                  name="description"
+                  type="text"
+                  id="description"
+                  class="form-control"
+                  placeholder="Information about your item"
+                ></textarea>
+              </div>
+              <div class="mb-3 mx-6 w-75">
+                <label for="endsAt" class="form-label">Ends at *</label>
+                <input
+                  type="datetime-local"
+                  id="endsAt"
+                  name="endsAt"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="mb-3 mx-3 w-75">
+                <label for="mediaOne" class="form-label">Image 1</label>
+                <input
+                  type="url"
+                  id="mediaOne"
+                  name="mediaOne"
+                  class="form-control"
+                  placeholder="Image URL"
+                />
+              </div>
+              <div class="mb-3 mx-3 w-75">
+                <label for="mediaTwo" class="form-label">Image 2</label>
+                <input
+                  type="url"
+                  id="mediaTwo"
+                  name="mediaTwo"
+                  class="form-control"
+                  placeholder="Image URL"
+                />
+              </div>
+              <div class="mb-3 mx-3 w-75">
+                <label for="mediaThree" class="form-label">Image 3</label>
+                <input
+                  type="url"
+                  id="mediaThree"
+                  name="mediaThree"
+                  class="form-control"
+                  placeholder="Image URL"
+                />
+              </div>
+              <button
+                type="submit"
+                class="btn text-decoration-none cta text-primary display-7 w-50 border-primary form-control mx-auto d-block my-5"
+              >
+                Post listing
+              </button>
+            </form>
+          </div>
+          <div class="modal-footer p-3"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./src/js/index.mjs" type="module"></script>
+    <script src="./src/js/auctions/postAuction.mjs" type="module"></script>
+  </body>
+</html>

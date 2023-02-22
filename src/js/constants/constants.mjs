@@ -5,3 +5,5 @@ const login = "/auction/auth/login";
 export const API_LOGIN_URL = `${API_BASE_URL}${login}`;
 const listings = "/auction/listings?sort=created&sortOrder=desc";
 export const API_LISTINGS_URL = `${API_BASE_URL}${listings}`;
+const create = "/auction/listings";
+export const API_POST_URL = `${API_BASE_URL}${create}`;
