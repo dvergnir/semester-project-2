@@ -34,19 +34,18 @@
           </div>
         </div>
       </div>
-      <nav class="navbar">
-        Navigation here
-        <a
-          class="p-2 text-info text-decoration-underline pe-auto"
-          data-bs-toggle="modal"
-          data-bs-target="#viewCreateModal"
-          >Create a listing</a
-        >
-      </nav>
+      <nav class="navbar">Navigation here</nav>
     </header>
     <main>
       <h1 class="h1 text-center mt-5 text-primary">Listings</h1>
       <section>
+        <button
+          class="btn text-decoration-none cta text-primary display-7 w-50 border-primary form-control mx-auto d-block my-5"
+          data-bs-toggle="modal"
+          data-bs-target="#viewCreateModal"
+        >
+          Create a listing +
+        </button>
         <div class="container">
           <div class="row mx-auto listings-container"></div>
         </div>
@@ -62,7 +61,6 @@
           >github.com/dvergnir</a
         >
       </div>
-      <!-- Copyright -->
     </footer>
     <!-- Scroll to top btn -->
     <button
@@ -179,6 +177,5 @@
     </div>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./src/js/index.mjs" type="module"></script>
-    <script src="./src/js/auctions/postAuction.mjs" type="module"></script>
   </body>
 </html>
