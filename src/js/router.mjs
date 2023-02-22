@@ -8,7 +8,6 @@ export function router() {
   const path = window.location.pathname;
 
   if (path === "/index.html" || path === "./index.html") {
-  if (path === "/index.html" || path === "./index.html") {
     loginUser();
     registerUser();
     setupListings();
