@@ -8,7 +8,13 @@ import { getSpecificAuction } from "./auctions/getSpecificAuction.mjs";
 export function router() {
   const path = window.location.pathname;
 
-  if (path === "/index.html" || path === "./index.html") {
+  // To make the routing work for both live-server and GitHub pages, I needed to add all these paths.
+  if (
+    path === "/" ||
+    path === "./" ||
+    path === "/index.html" ||
+    path === "./index.html"
+  ) {
     loginUser();
     registerUser();
     setupListings();
