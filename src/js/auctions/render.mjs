@@ -34,10 +34,12 @@ function renderAuction(auctionData) {
       </p>
       
     </div>
-    <div class=" text-center"><a href="#" class="text-decoration-underline pe-auto display-7">View this auction</a>
+    <div class=" text-center"><a href="" class="text-decoration-underline pe-auto display-7" id="listing-link">View this auction</a>
     </div>
   </div>
 </div>`;
+  container.querySelector("#listing-link").href =
+    "auction-listing.html?id=" + auctionData.id;
   container.querySelector("img").src = media[0];
   container.querySelector("h2").innerText = auctionData.title;
   container.querySelector(".card-bid").innerText =
