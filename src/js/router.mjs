@@ -5,27 +5,29 @@ import { scrollToTop } from "./utilities.js/buttonToTop.mjs";
 import { createAuction } from "./auctions/createAuction.mjs";
 import { getSpecificAuction } from "./auctions/getSpecificAuction.mjs";
 
+const GITHUB_BASE = "/semester-project-2";
+
 export function router() {
   const path = window.location.pathname;
 
   // To make the routing work for both live-server and GitHub pages, I needed to add all these paths.
   if (
+    path === GITHUB_BASE + "/" ||
     path === "/" ||
-    path === "./" ||
-    path === "/index.html" ||
-    path === "./index.html"
+    path === GITHUB_BASE + "/index.html" ||
+    path === "/index.html"
   ) {
     loginUser();
     registerUser();
     setupListings();
     scrollToTop();
-  } else if (path === "/home.html" || path === "./home.html") {
+  } else if (path === GITHUB_BASE + "/home.html" || path === "/home.html") {
     setupListings();
     scrollToTop();
     createAuction();
   } else if (
-    path === "/auction-listing.html" ||
-    path === "./auction-listing.html"
+    path === GITHUB_BASE + "/auction-listing.html" ||
+    path === "/auction-listing.html"
   ) {
     getSpecificAuction();
   }
