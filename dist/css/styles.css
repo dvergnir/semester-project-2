@@ -26235,6 +26235,7 @@ button {
   -webkit-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.75);
+  width: 280px;
 }
 
 .cta {
@@ -26278,6 +26279,13 @@ body {
 .carousel-img {
   height: 100%;
   max-height: 300px;
+}
+
+.avatar {
+  display: block;
+  width: 100%;
+  max-width: 150px;
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=styles.css.map */

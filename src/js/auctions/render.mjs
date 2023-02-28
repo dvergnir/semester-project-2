@@ -16,7 +16,7 @@ function renderAuction(auctionData) {
   var trimmedDate = date.substring(0, lengthOfDate);
 
   container.innerHTML = `<div class="col-sm text-left auction-wrapper h-100"">
-  <div class="card mx-auto bg-secondary py-4 h-100" style="width: 20rem">
+  <div class="card mx-auto bg-secondary py-4 h-100">
   <div class="card-header h-100">
   <img
   class="card-img-top p-4"
