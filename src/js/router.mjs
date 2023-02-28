@@ -4,6 +4,8 @@ import { setupListings } from "./auctions/setup.mjs";
 import { scrollToTop } from "./utilities.js/buttonToTop.mjs";
 import { createAuction } from "./auctions/createAuction.mjs";
 import { getSpecificAuction } from "./auctions/getSpecificAuction.mjs";
+import { getUserProfile } from "./user/setup.mjs";
+import { editAvatarListener } from "./listeners/editAvatarListener.mjs";
 
 const GITHUB_BASE = "/semester-project-2";
 
@@ -25,10 +27,13 @@ export function router() {
     setupListings();
     scrollToTop();
     createAuction();
+    getUserProfile();
+    editAvatarListener();
   } else if (
     path === GITHUB_BASE + "/auction-listing.html" ||
     path === "/auction-listing.html"
   ) {
     getSpecificAuction();
+    getUserProfile();
   }
 }

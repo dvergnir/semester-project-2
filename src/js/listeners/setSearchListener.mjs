@@ -1,6 +1,6 @@
-import { renderAuctions } from "../auctions/render.mjs";
-import { filterListings } from "../auctions/filter.mjs";
-import { emptyListingsCheck } from "../error.mjs/error.mjs";
+import { renderAuctions } from "./../auctions/render.mjs";
+import { filterListings } from "./../auctions/filter.mjs";
+import { emptyListingsCheck } from "./../error.mjs/error.mjs";
 /**
  * // Function that registers search value and gets the array from the filterPosts() function
  * // Then runs the renderPost function with the new array

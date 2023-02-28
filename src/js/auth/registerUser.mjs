@@ -1,5 +1,5 @@
-import { register } from "../api/register.mjs";
-import { API_REG_URL } from "../constants/constants.mjs";
+import { register } from "./../api/register.mjs";
+import { API_REG_URL } from "./../constants/constants.mjs";
 /**
  * function to retrieve values from a form and sends a HTTP POST request to the server
  * the request contains a object that is created from the form.

@@ -1,5 +1,5 @@
 import * as storage from "./../storage/index.mjs";
-import { loginError } from "../error.mjs/error.mjs";
+import { loginError } from "./../error.mjs/error.mjs";
 
 /**
  * // Async fetch function that sends a HTTP POST request to the API server,

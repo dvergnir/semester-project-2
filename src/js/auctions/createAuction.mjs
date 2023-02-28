@@ -1,5 +1,5 @@
-import { postAuction } from "../api/postAuction.mjs";
-import { API_POST_URL } from "../constants/constants.mjs";
+import { postAuction } from "./../api/postAuction.mjs";
+import { API_POST_URL } from "./../constants/constants.mjs";
 
 export function createAuction() {
   const form = document.querySelector("#post-auction");
