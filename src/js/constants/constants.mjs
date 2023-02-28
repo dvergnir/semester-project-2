@@ -9,3 +9,5 @@ const listings = "/auction/listings?sort=created&sortOrder=desc";
 export const API_LISTINGS_URL = `${API_BASE_URL}${listings}`;
 const create = "/auction/listings";
 export const API_POST_URL = `${API_BASE_URL}${create}`;
+const profile = "/auction/profiles/";
+export const API_PROFILE_URL = `${API_BASE_URL}${profile}`;

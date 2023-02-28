@@ -1,20 +1,16 @@
 import * as storage from "./../storage/index.mjs";
 
-export async function postAuction(url, auction, method) {
+export async function getProfile(url) {
   try {
     const token = storage.load("accessToken");
+
     const response = await fetch(url, {
-      method: method,
+      method: "GET",
       headers: {
         "Content-Type": "application/json; charset=UTF-8",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(auction),
     });
-    if (response.ok) {
-      window.location.reload();
-    }
-  } catch (error) {
-    console.log(error);
-  }
+    return await response.json();
+  } catch (error) {}
 }
