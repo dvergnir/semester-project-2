@@ -1,4 +1,4 @@
-import * as storage from "../storage/index.mjs";
+import * as storage from "./../storage/index.mjs";
 
 /**
  * // Function that checks whether a http request returned a false or true response, and then displayes either validation message og error message based on the return value from the request

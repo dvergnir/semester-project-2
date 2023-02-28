@@ -1,5 +1,5 @@
-import { API_LISTING_URL } from "../constants/constants.mjs";
-import { getAuctions } from "../api/getAuctions.mjs";
+import { API_LISTING_URL } from "./../constants/constants.mjs";
+import { getAuctions } from "./../api/getAuctions.mjs";
 import { renderSpecificAuction } from "./renderSpecificAuction.mjs";
 
 export async function getSpecificAuction() {

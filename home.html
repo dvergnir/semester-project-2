@@ -34,13 +34,7 @@
           </div>
         </div>
       </div>
-      <div class="d-flex justify-content-center mt-5">
-        <a class="change-avatar d-block">Change avatar</a>
-        <img src="./assets/images/profile.jpg" class="avatar" />
-        <a class="sign-out d-block">Sign out</a>
-      </div>
-
-      <p class="display-7 text-primary text-center mt-2">Credits:</p>
+      <div class="profile-container"></div>
     </header>
     <main>
       <h1 class="h1 text-center mt-5 text-primary">Listings</h1>
@@ -174,6 +168,62 @@
                 class="btn text-decoration-none cta text-primary display-7 w-50 border-primary form-control mx-auto d-block my-5"
               >
                 Post listing
+              </button>
+            </form>
+          </div>
+          <div class="modal-footer p-3"></div>
+        </div>
+      </div>
+    </div>
+    <!--Change Avatar modal-->
+    <div
+      class="modal fade"
+      id="avatarModal"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bg-secondary border-primary p-4">
+          <div class="modal-header text-center">
+            <h2
+              class="modal-title display-7 text-primary mx-auto"
+              id="exampleModalLongTitle"
+            >
+              Change your avatar
+            </h2>
+            <button
+              type="button"
+              class="close text-bg-primary"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form
+              method="PUT"
+              id="avatar-form"
+              class="text-start d-flex flex-column align-items-center mt-5"
+            >
+              <div class="mb-3 mx-3 w-75">
+                <label for="editAvatar" class="form-label text-primary"
+                  >Avatar url</label
+                >
+                <input
+                  type="url"
+                  id="editAvatar"
+                  name="editAvatar"
+                  class="form-control"
+                  placeholder="Image URL"
+                />
+              </div>
+              <button
+                type="submit"
+                class="btn text-decoration-none cta text-primary display-7 w-50 border-primary form-control mx-auto d-block my-5"
+              >
+                Upload
               </button>
             </form>
           </div>
