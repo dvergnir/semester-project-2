@@ -1,6 +1,6 @@
 import * as storage from "./../storage/index.mjs";
 
-export async function postAuction(url, auction, method) {
+export async function bidRequest(url, auction, method) {
   try {
     const token = storage.load("accessToken");
     const response = await fetch(url, {

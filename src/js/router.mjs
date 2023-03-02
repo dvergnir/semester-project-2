@@ -1,11 +1,14 @@
 import { registerUser } from "./auth/registerUser.mjs";
 import { loginUser } from "./auth/loginUser.mjs";
 import { setupListings } from "./auctions/setup.mjs";
-import { scrollToTop } from "./utilities.js/buttonToTop.mjs";
+import { scrollToTop } from "./utilities/buttonToTop.mjs";
 import { createAuction } from "./auctions/createAuction.mjs";
 import { getSpecificAuction } from "./auctions/getSpecificAuction.mjs";
-import { getUserProfile } from "./user/setup.mjs";
 import { editAvatarListener } from "./listeners/editAvatarListener.mjs";
+import { postBid } from "./user/bid.mjs";
+import { setupProfile } from "./user/setup.mjs";
+import { checkAuthorization } from "./auth/checkAuth.mjs";
+//import { toggleLoadingIndicator } from "./utilities/loadingIndicator.mjs";
 
 const GITHUB_BASE = "/semester-project-2";
 
@@ -22,18 +25,25 @@ export function router() {
     loginUser();
     registerUser();
     setupListings();
+    //toggleLoadingIndicator();
     scrollToTop();
+    checkAuthorization();
   } else if (path === GITHUB_BASE + "/home.html" || path === "/home.html") {
+    setupProfile();
     setupListings();
+    //toggleLoadingIndicator();
     scrollToTop();
     createAuction();
-    getUserProfile();
     editAvatarListener();
+    checkAuthorization();
   } else if (
     path === GITHUB_BASE + "/auction-listing.html" ||
     path === "/auction-listing.html"
   ) {
+    setupProfile();
     getSpecificAuction();
-    getUserProfile();
+    //toggleLoadingIndicator();
+    postBid();
+    checkAuthorization();
   }
 }

@@ -29,3 +29,16 @@ export function emptyListingsCheck(listings) {
   </div>`;
   }
 }
+
+export function bidFeedback(response) {
+  if (!response.ok) {
+    const feedbackContainer = document.querySelector(".bid-feedback");
+    feedbackContainer.innerHTML += `<div class="text-primary text-center" id="listings-error">
+    <p>
+    Your bid needs to be higher than current highest bid.</p>
+  </div>`;
+  } else {
+    feedbackContainer.innerText = "Your bid was sent. Good luck!";
+  }
+  console.log(feedbackContainer);
+}

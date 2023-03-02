@@ -32,11 +32,33 @@
               />
             </form>
           </div>
+          <a
+            class="sign-out d-block mt-4 justify-content-end display-7 text-decoration-none"
+            >Sign out</a
+          >
         </div>
       </div>
       <div class="profile-container"></div>
     </header>
     <main class="mx-3"><div class="specific-container"></div></main>
+    <form class="w-100 bid-form" method="POST">
+      <label for="input-bid" class="d-block text-center text-primary display-7"
+        >Make a bid</label
+      >
+      <input
+        type="number"
+        name="amount"
+        class="mx-auto d-block my-3 rounded border border-primary text-primary p-1"
+        id="amount"
+      />
+      <button
+        type="submit"
+        class="btn cta text-primary w-50 border-primary form-control mx-auto d-block"
+        id="btn-bid"
+      >
+        Place bid
+      </button>
+    </form>
     <a href="./home.html" class="display-7 mt-5 p-3 d-block text-center"
       >Back to listings</a
     >

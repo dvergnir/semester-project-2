@@ -1,3 +1,5 @@
+import * as storage from "./../storage/index.mjs";
+
 function renderAuction(auctionData) {
   const container = document.createElement("div");
   const listingsContainer = document.querySelector(".listings-container");
@@ -34,10 +36,14 @@ function renderAuction(auctionData) {
       </p>
       
     </div>
-    <div class=" text-center"><a href="" class="text-decoration-underline pe-auto display-7" id="listing-link">View this auction</a>
+    <div class=" text-center"><a href="" class="text-decoration-underline pe-auto display-7 auction-link" id="listing-link">View this auction</a>
     </div>
   </div>
 </div>`;
+  const token = storage.load("accessToken");
+  if (!token) {
+    container.querySelector("#listing-link").classList.add("d-none");
+  }
   container.querySelector("#listing-link").href =
     "auction-listing.html?id=" + auctionData.id;
   container.querySelector("img").src = media[0];
