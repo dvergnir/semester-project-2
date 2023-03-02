@@ -1,9 +1,12 @@
+import * as storage from "./../storage/index.mjs";
+
 export function renderSpecificAuction(auctionData) {
   const auctionWrapper = document.createElement("div");
   const specificContainer = document.querySelector(".specific-container");
   auctionWrapper.classList.add("specific", "mx-auto");
   auctionWrapper.id = auctionData.id;
   const bids = auctionData.bids;
+  const bidInput = document.querySelector("#amount");
 
   var date = auctionData.endsAt;
   var lengthOfDate = 10;
@@ -50,26 +53,8 @@ export function renderSpecificAuction(auctionData) {
   <p class="bids display-7 text-primary"></p>
   <p class="endsAt display-7 text-primary">
       </p>
-  <form class="w-100">
-    <label
-      for="input-bid"
-      class="d-block text-center text-primary display-7"
-      >Make a bid</label
-    >
-    <input
-      type="number"
-      name="input-bid"
-      class="mx-auto d-block my-3"
-      id="input-bid"
-    />
-    <button
-      type="button"
-      class="btn cta text-primary w-50 border-primary form-control mx-auto d-block"
-      id="btn-bid"
-    >
-      Place bid
-    </button>
-  </form>
+      <div class="bid-feedback"></div>
+
 </div>`;
   auctionWrapper.querySelector(".specific-text").innerText =
     auctionData.description;
@@ -90,6 +75,7 @@ export function renderSpecificAuction(auctionData) {
 
   auctionWrapper.querySelector(".endsAt").innerText = "Ends at: " + trimmedDate;
   const auctionMedia = auctionData.media;
+
   const carousel = auctionWrapper.querySelector(".carousel-inner");
   auctionMedia.forEach((imgSrc) => {
     const carouselItem = new DOMParser().parseFromString(

@@ -1,4 +1,4 @@
-import { postAuction } from "./../api/postAuction.mjs";
+import { postRequest } from "../api/postRequest.mjs";
 import { API_POST_URL } from "./../constants/constants.mjs";
 
 export function createAuction() {
@@ -29,6 +29,6 @@ export function createAuction() {
       endsAt,
       media,
     };
-    postAuction(API_POST_URL, auction, method);
+    postRequest(API_POST_URL, auction, method);
   });
 }
