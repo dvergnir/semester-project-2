@@ -1,4 +1,5 @@
 import * as storage from "./../storage/index.mjs";
+import { bidFeedback } from "../error.mjs/error.mjs";
 
 export async function bidRequest(url, auction, method) {
   try {
@@ -11,6 +12,8 @@ export async function bidRequest(url, auction, method) {
       },
       body: JSON.stringify(auction),
     });
+    bidFeedback(response);
+
     if (response.ok) {
       window.location.reload();
     }

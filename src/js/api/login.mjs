@@ -23,7 +23,6 @@ export async function login(url, user, method) {
       body: JSON.stringify(user),
     });
     const json = await response.json();
-    console.log(json);
     const { accessToken, ...name } = json;
     storage.save("accessToken", accessToken);
     storage.save("user", name);
