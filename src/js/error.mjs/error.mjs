@@ -34,7 +34,7 @@ export function bidFeedback(response) {
   const feedbackContainer = document.querySelector(".bid-feedback");
   if (!response.ok) {
     feedbackContainer.innerHTML = "";
-    feedbackContainer.innerHTML += `<div class="text-primary text-center" id="listings-error">
+    feedbackContainer.innerHTML += `<div class="text-danger text-center " id="listings-error">
     <p>
     Your bid needs to be higher than current highest bid.</p>
   </div>`;
