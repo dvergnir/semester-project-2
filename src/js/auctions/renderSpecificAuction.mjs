@@ -1,12 +1,30 @@
 import * as storage from "./../storage/index.mjs";
 
+/**
+Renders a specific auction in the DOM using the provided auction data.
+*@param {Object} auctionData - An object containing information about the auction.
+*@param {string} auctionData.id - The unique identifier for the auction.
+*@param {string} auctionData.title - The title of the auction.
+*@param {string} auctionData.description - The description of the auction.
+*@param {Object[]} auctionData.bids - An array of objects containing information about each bid.
+*@param {Object} auctionData.seller - An object containing information about the seller.
+*@param {string} auctionData.seller.name - The name of the seller.
+*@param {Object[]} auctionData.media - An array of strings containing URLs to images for the auction.
+*@param {string} auctionData.endsAt - The date and time when the auction ends.
+*/
 export function renderSpecificAuction(auctionData) {
   const auctionWrapper = document.createElement("div");
   const specificContainer = document.querySelector(".specific-container");
   auctionWrapper.classList.add("specific", "mx-auto");
   auctionWrapper.id = auctionData.id;
   const bids = auctionData.bids;
-  const bidInput = document.querySelector("#amount");
+  const bidForm = document.querySelector(".bid-form");
+
+  const { name } = storage.load("user");
+
+  if (name === auctionData.seller.name) {
+    bidForm.classList.add("d-none");
+  }
 
   var date = auctionData.endsAt;
   var lengthOfDate = 10;

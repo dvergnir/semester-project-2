@@ -1,3 +1,9 @@
+/**
+ * Renders the user's profile data onto the HTML document.
+ * @function renderProfile
+ * @param {Object} profile - The user's profile data, including their name, avatar URL, and credit balance.
+ * @returns {void}
+ */
 export function renderProfile(profile) {
   const container = document.createElement("div");
   const profileContainer = document.querySelector(".profile-container");

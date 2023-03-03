@@ -1,24 +1,9 @@
-import * as storage from "./../storage/index.mjs";
-
 /**
- * // Function that checks whether a http request returned a false or true response, and then displayes either validation message og error message based on the return value from the request
- * @param {object} response // Checks if there were any false returns from the ok property in the http request
- * @example
- * ```
- * // Call the function and pass in the the response object from a fetch call
- * registrationError(response);
- * ```
+ * Checks if the provided array of auction listings is empty, and updates the HTML of the listings container to display an error message if so.
+ * @function emptyListingsCheck
+ * @param {Array} listings - The array of auction listings to check for emptiness.
+ * @returns {void}
  */
-export function loginError(response) {
-  if (!response.ok) {
-    storage.clear();
-    const credError = document.getElementById("cred-error");
-    credError.style.display = "block";
-  } else if (response.ok) {
-    window.location.replace("./home.html");
-  }
-}
-
 export function emptyListingsCheck(listings) {
   if (listings.length <= 0) {
     const listingsContainer = document.querySelector(".listings-container");
@@ -30,6 +15,12 @@ export function emptyListingsCheck(listings) {
   }
 }
 
+/**
+ * Checks if the provided array of listings is empty, and updates the HTML of the listings container to display an error message if so.
+ * @function emptyListingsCheck
+ * @param {Array} listings - The array of auction listings to check for emptiness.
+ * @returns {void}
+ */
 export function bidFeedback(response) {
   const feedbackContainer = document.querySelector(".bid-feedback");
   if (!response.ok) {
@@ -39,5 +30,4 @@ export function bidFeedback(response) {
     Your bid needs to be higher than current highest bid.</p>
   </div>`;
   }
-  console.log(response);
 }

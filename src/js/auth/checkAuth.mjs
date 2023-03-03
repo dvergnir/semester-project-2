@@ -1,5 +1,15 @@
 import * as storage from "./../storage/index.mjs";
 
+/**
+ * // Checks if the user is authorized to access pages based on their token, and redirects accordingly.
+ *
+ * @function
+ * @example
+ * //
+ * ```js
+ * checkAuthorization()
+ * ```
+ *  */
 export function checkAuthorization() {
   const path = window.location.pathname;
   const GITHUB_BASE = "/semester-project-2";

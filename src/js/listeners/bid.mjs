@@ -1,6 +1,11 @@
-import { bidRequest } from "./../api/bidRequest.mjs";
-import { API_LISTING_URL } from "./../constants/constants.mjs";
+import { bidRequest } from "../api/bidRequest.mjs";
+import { API_LISTING_URL } from "../constants/constants.mjs";
 
+/**
+ * Sets up a listener for the bid form, which sends a request to the server to post a bid on the current listing when the form is submitted.
+ * @function postBid
+ * @returns {void}
+ */
 export function postBid() {
   const queryString = document.location.search;
   const params = new URLSearchParams(queryString);
