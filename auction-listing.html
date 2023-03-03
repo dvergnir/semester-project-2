@@ -40,7 +40,14 @@
       </div>
       <div class="profile-container"></div>
     </header>
-    <main class="mx-3"><div class="specific-container"></div></main>
+    <main class="mx-3">
+      <div class="d-flex justify-content-center align-items-center mt-5">
+        <div class="spinner spinner-border text-primary" role="status">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+      <div class="specific-container"></div>
+    </main>
     <form class="w-100 bid-form" method="POST">
       <label for="input-bid" class="d-block text-center text-primary display-7"
         >Make a bid</label
@@ -73,6 +80,63 @@
         >
       </div>
     </footer>
+    <!--Change Avatar modal-->
+    <div
+      class="modal fade"
+      id="avatarModal"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bg-secondary border-primary p-4">
+          <div class="modal-header text-center">
+            <div class="avatar-feedback"></div>
+            <h2
+              class="modal-title display-7 text-primary mx-auto"
+              id="exampleModalLongTitle"
+            >
+              Change your avatar
+            </h2>
+            <button
+              type="button"
+              class="close text-bg-primary"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form
+              method="PUT"
+              id="avatar-form"
+              class="text-start d-flex flex-column align-items-center mt-5"
+            >
+              <div class="mb-3 mx-3 w-75">
+                <label for="editAvatar" class="form-label text-primary"
+                  >Avatar url</label
+                >
+                <input
+                  type="url"
+                  id="editAvatar"
+                  name="editAvatar"
+                  class="form-control"
+                  placeholder="Image URL"
+                />
+              </div>
+              <button
+                type="submit"
+                class="btn text-decoration-none cta text-primary display-7 w-50 border-primary form-control mx-auto d-block my-5"
+              >
+                Upload
+              </button>
+            </form>
+          </div>
+          <div class="modal-footer p-3"></div>
+        </div>
+      </div>
+    </div>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./src/js/index.mjs" type="module"></script>
   </body>

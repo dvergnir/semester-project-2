@@ -1,5 +1,5 @@
 import * as storage from "./../storage/index.mjs";
-import { loginError } from "./../error.mjs/error.mjs";
+import { loginHandler } from "./../handlers/loginHandler.mjs";
 
 /**
  * // Async fetch function that sends a HTTP POST request to the API server,
@@ -7,11 +7,6 @@ import { loginError } from "./../error.mjs/error.mjs";
  * @param {string} url // url path to send the POST request to
  * @param {object} user // object of the user values that needs to be logged in
  * @param {string} method  // HTTP request
- * @example
- * ```
- * // Call the function
- * login(url, user, POST)
- * ```
  */
 export async function login(url, user, method) {
   try {
@@ -23,11 +18,10 @@ export async function login(url, user, method) {
       body: JSON.stringify(user),
     });
     const json = await response.json();
-    console.log(json);
     const { accessToken, ...name } = json;
     storage.save("accessToken", accessToken);
     storage.save("user", name);
-    loginError(response);
+    loginHandler(response);
   } catch (error) {
     console.log(error);
   }

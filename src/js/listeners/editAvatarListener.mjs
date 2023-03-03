@@ -2,6 +2,11 @@ import { API_PROFILE_URL } from "./../constants/constants.mjs";
 import * as storage from "./../storage/index.mjs";
 import { putAvatar } from "./../api/putAvatar.mjs";
 
+/**
+ * Sets up a listener for the avatar edit form, which sends a request to the server to update the user's avatar when the form is submitted.
+ * @function editAvatarListener
+ * @returns {void}
+ */
 export function editAvatarListener() {
   const user = storage.load("user").name;
   const form = document.querySelector("#avatar-form");

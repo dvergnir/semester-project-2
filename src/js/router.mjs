@@ -5,13 +5,18 @@ import { scrollToTop } from "./utilities/buttonToTop.mjs";
 import { createAuction } from "./auctions/createAuction.mjs";
 import { getSpecificAuction } from "./auctions/getSpecificAuction.mjs";
 import { editAvatarListener } from "./listeners/editAvatarListener.mjs";
-import { postBid } from "./user/bid.mjs";
+import { postBid } from "./listeners/bid.mjs";
 import { setupProfile } from "./user/setup.mjs";
 import { checkAuthorization } from "./auth/checkAuth.mjs";
-//import { toggleLoadingIndicator } from "./utilities/loadingIndicator.mjs";
 
 const GITHUB_BASE = "/semester-project-2";
 
+/**
+
+Routes to different pages and executes the necessary functions based on the current path.
+*@function router
+*@returns {void}
+*/
 export function router() {
   const path = window.location.pathname;
 
@@ -25,13 +30,11 @@ export function router() {
     loginUser();
     registerUser();
     setupListings();
-    //toggleLoadingIndicator();
     scrollToTop();
     checkAuthorization();
   } else if (path === GITHUB_BASE + "/home.html" || path === "/home.html") {
     setupProfile();
     setupListings();
-    //toggleLoadingIndicator();
     scrollToTop();
     createAuction();
     editAvatarListener();
@@ -42,7 +45,6 @@ export function router() {
   ) {
     setupProfile();
     getSpecificAuction();
-    //toggleLoadingIndicator();
     postBid();
     checkAuthorization();
   }

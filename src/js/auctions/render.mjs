@@ -1,5 +1,18 @@
 import * as storage from "./../storage/index.mjs";
 
+/**
+Renders an auction listing on the page with the provided auction data by creating an HTML
+element container, populating it with data, and appending it to the listings container on the page.
+*@function
+*@name renderAuction
+*@param {Object} auctionData - The data object representing the auction to be rendered.
+*@param {string[]} auctionData.media - An array of strings representing the URLs of the auction's media content.
+*@param {string} auctionData.id - The unique identifier of the auction.
+*@param {string} auctionData.title - The title of the auction.
+*@param {Object} auctionData._count - An object containing information about the number of bids on the auction.
+*@param {number} auctionData._count.bids - The number of bids on the auction.
+*@param {string} auctionData.endsAt - A string representing the date and time that the auction ends.
+*/
 function renderAuction(auctionData) {
   const container = document.createElement("div");
   const listingsContainer = document.querySelector(".listings-container");
@@ -53,6 +66,14 @@ function renderAuction(auctionData) {
   container.querySelector(".card-ends").innerText = "Ends: " + trimmedDate;
   listingsContainer.append(container);
 }
+
+/**
+Renders multiple auction listings on the page with the provided auction data by calling the renderAuction function
+for each auction data object in the provided array.
+*@function
+*@name renderAuctions
+*@param {Object[]} listings - An array of data objects representing the auctions to be rendered.
+*/
 
 export function renderAuctions(listings) {
   listings.forEach(renderAuction);
