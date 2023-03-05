@@ -19,6 +19,8 @@ export function renderSpecificAuction(auctionData) {
   auctionWrapper.id = auctionData.id;
   const bids = auctionData.bids;
   const bidForm = document.querySelector(".bid-form");
+  const headTitle = document.querySelector("title");
+  headTitle.innerText = auctionData.title + " | SwiftAuction";
 
   const { name } = storage.load("user");
 
