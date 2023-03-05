@@ -19,6 +19,12 @@ export function renderSpecificAuction(auctionData) {
   auctionWrapper.id = auctionData.id;
   const bids = auctionData.bids;
   const bidForm = document.querySelector(".bid-form");
+  const headTitle = document.querySelector("title");
+  const media = auctionData.media;
+  let defaultImage = "https://dummyimage.com/640x360/fff/aaa";
+  if (media.length === 0) media[0] = defaultImage;
+
+  headTitle.innerText = auctionData.title + " | SwiftAuction";
 
   const { name } = storage.load("user");
 
@@ -99,7 +105,7 @@ export function renderSpecificAuction(auctionData) {
     const carouselItem = new DOMParser().parseFromString(
       `
       <div class="carousel-item active">
-        <img src="" class="carousel-img d-block mx-auto"/>
+        <img src="" class="carousel-img d-block mx-auto"  alt="auctioned item"/>
       </div>
      `,
       "text/html"

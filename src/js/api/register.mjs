@@ -1,3 +1,5 @@
+import { loginHandler } from "./../handlers/loginHandler.mjs";
+import * as storage from "./../storage/index.mjs";
 /**
  * // Async fetch function that sends a HTTP POST request to the API server,
  *  with an object with the properties of a registered user
@@ -20,8 +22,12 @@ export async function register(url, user, method) {
       },
       body: JSON.stringify(user),
     });
-    console.log(user);
-    return await response.json();
+    if (response.ok) {
+      const registerModal = new bootstrap.Modal("#viewRegisterModal");
+      const loginModal = new bootstrap.Modal("#viewLoginModal");
+      registerModal.hide();
+      loginModal.show();
+    }
   } catch (error) {
     console.log(error);
   }
