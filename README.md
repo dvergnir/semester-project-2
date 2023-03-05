@@ -2,7 +2,7 @@
 
 Noroff-FEU Semester Project year 2
 
-![My-image](./assets/images/SwiftAuction_logo.png)
+![My-image](./assets/images/SwiftAuction_screenshot.png)
 
 ### This site was built using [GitHub Pages](https://dvergnir.github.io/semester-project-2/).
 
