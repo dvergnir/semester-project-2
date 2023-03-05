@@ -4,6 +4,12 @@ Noroff-FEU Semester Project year 2
 
 ![My-image](./assets/images/SwiftAuction_screenshot.png)
 
+## SwiftAuction
+An online auction house for the everyday adult. 
+The auction house is perfect for you if you have a busy life.
+Auction your stuff, or save money on buying used items.
+The intention was to build a simple and easy-to-use auctionhouse.
+
 ### This site was built using [GitHub Pages](https://dvergnir.github.io/semester-project-2/).
 
 ## Built with
