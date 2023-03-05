@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SwiftAuction makes it easy to bid on peoples auctions and save money"
+    />
+    <title></title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/images/sa_favicon.png"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/lez3exy.css" />
+    <link rel="stylesheet" href="./dist/css/styles.css" />
+  </head>
+  <body>
+    <header class="p-2 border-bottom border-2 border-primary">
+      <div class="container d-flex justify-content-start">
+        <div class="row">
+          <div class="col-sm">
+            <a class="" href="./home.html"
+              ><img
+                src="./assets/images/SwiftAuction_logo.png"
+                class="logo"
+                alt="Logo. SwiftAuction, 1-2-3 Sold!"
+              />
+            </a>
+          </div>
+          <div class="col-sm">
+            <form class="">
+              <input
+                class="form-control border-primary d-block mt-2 w-auto"
+                id="searchbar"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+            </form>
+          </div>
+          <a
+            class="sign-out d-block mt-4 justify-content-end display-7 text-decoration-none"
+            >Sign out</a
+          >
+        </div>
+      </div>
+      <div class="profile-container"></div>
+    </header>
+    <main class="mx-3">
+      <div class="d-flex justify-content-center align-items-center mt-5">
+        <div class="spinner spinner-border text-primary" role="status">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+      <div class="specific-container"></div>
+    </main>
+    <form class="w-100 bid-form" method="POST">
+      <label for="amount" class="d-block text-center text-primary display-7"
+        >Make a bid</label
+      >
+      <input
+        type="number"
+        name="amount"
+        class="mx-auto d-block my-3 rounded border border-primary text-primary p-1"
+        id="amount"
+      />
+      <button
+        type="submit"
+        class="btn cta text-primary w-50 border-primary form-control mx-auto d-block"
+        id="btn-bid"
+      >
+        Place bid
+      </button>
+    </form>
+    <a href="./home.html" class="display-7 mt-5 p-3 d-block text-center"
+      >Back to listings</a
+    >
+    <footer
+      class="bg-primary text-secondary text-center text-lg-start fixed-bottom"
+    >
+      <!-- Copyright -->
+      <div class="text-center p-3">
+        © 2023 Copyright:
+        <a class="text-secondary" href="https://github.com/dvergnir"
+          >github.com/dvergnir</a
+        >
+      </div>
+    </footer>
+    <!--Change Avatar modal-->
+    <div
+      class="modal fade"
+      id="avatarModal"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bg-secondary border-primary p-4">
+          <div class="modal-header text-center">
+            <div class="avatar-feedback"></div>
+            <h2
+              class="modal-title display-7 text-primary mx-auto"
+              id="exampleModalLongTitle"
+            >
+              Change your avatar
+            </h2>
+            <button
+              type="button"
+              class="close text-bg-primary"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form
+              method="PUT"
+              id="avatar-form"
+              class="text-start d-flex flex-column align-items-center mt-5"
+            >
+              <div class="mb-3 mx-3 w-75">
+                <label for="editAvatar" class="form-label text-primary"
+                  >Avatar url</label
+                >
+                <input
+                  type="url"
+                  id="editAvatar"
+                  name="editAvatar"
+                  class="form-control"
+                  placeholder="Image URL"
+                />
+              </div>
+              <button
+                type="submit"
+                class="btn text-decoration-none cta text-primary display-7 w-50 border-primary form-control mx-auto d-block my-5"
+              >
+                Upload
+              </button>
+            </form>
+          </div>
+          <div class="modal-footer p-3"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./src/js/index.mjs" type="module"></script>
+  </body>
+</html>

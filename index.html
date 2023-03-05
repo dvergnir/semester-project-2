@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Browse auctions and register or sign in to bid and sell here at SwiftAuction"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SwiftAuction</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/images/sa_favicon.png"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/lez3exy.css" />
+    <link rel="stylesheet" href="./dist/css/styles.css" />
+  </head>
+  <body>
+    <header class="p-3 border-bottom border-2 border-primary">
+      <div class="container d-flex justify-content-start">
+        <div class="row">
+          <div class="col-sm">
+            <a class="" href="./index.html"
+              ><img
+                src="./assets/images/SwiftAuction_logo.png"
+                class="logo"
+                alt="Logo. SwiftAuction, 1-2-3 Sold!"
+              />
+            </a>
+          </div>
+          <div class="col-sm">
+            <form class="">
+              <input
+                class="form-control border-primary d-block mt-2 w-auto"
+                id="searchbar"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="pt-4">
+        <p class="text-center mx-auto w-100 text-primary display-7">
+          Welcome to SwiftAuction!
+          <a
+            class="p-2 text-info text-decoration-underline pe-auto"
+            data-bs-toggle="modal"
+            data-bs-target="#viewLoginModal"
+            >Sign in</a
+          >
+          or
+          <a
+            class="p-2 text-info text-decoration-underline pe-auto"
+            data-bs-toggle="modal"
+            data-bs-target="#viewRegisterModal"
+            >Register</a
+          >
+          to view, and bid on listings!
+        </p>
+      </div>
+    </header>
+    <main>
+      <h1 class="h1 text-center mt-5 text-primary">Listings</h1>
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="spinner spinner-border text-primary" role="status">
+          <span class="sr-only"></span>
+        </div>
+      </div>
+      <section>
+        <div class="container">
+          <div class="row mx-auto listings-container"></div>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="bg-primary text-secondary text-center text-lg-start fixed-bottom"
+    >
+      <!-- Copyright -->
+      <div class="text-center p-3">
+        © 2023 Copyright:
+        <a class="text-secondary" href="https://github.com/dvergnir"
+          >github.com/dvergnir</a
+        >
+      </div>
+    </footer>
+    <!-- Scroll to top button -->
+    <button
+      type="button"
+      class="btn btn-primary btn-floating"
+      id="btn-back-to-top"
+    >
+      ^
+    </button>
+    <!-- Register modal -->
+    <div
+      class="modal fade"
+      id="viewRegisterModal"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bg-secondary border-primary p-4">
+          <div class="modal-header text-center">
+            <h2
+              class="modal-title display-7 text-primary mx-auto"
+              id="exampleModalLongTitle"
+            >
+              Register
+            </h2>
+            <button
+              type="button"
+              class="close text-bg-primary"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form
+              action="./home.html"
+              method="POST"
+              id="reg-form"
+              class="text-start d-flex flex-column align-items-center mt-5"
+            >
+              <div class="mb-3 mx-6 w-75">
+                <label for="name" class="form-label">Name *</label>
+                <input
+                  name="name"
+                  type="text"
+                  id="name"
+                  class="form-control"
+                  placeholder="Name"
+                  pattern="^[\w]+$"
+                  maxlength="20"
+                  required
+                  title="Name cannot contain (Æ, Ø, Å), ( - ), ( . )  | Example: firstName_lastName"
+                />
+              </div>
+              <div class="mb-3 mx-6 w-75">
+                <label for="email" class="form-label">Email *</label>
+                <input
+                  name="email"
+                  type="email"
+                  id="email"
+                  class="form-control"
+                  placeholder="email.address@noroff.no"
+                  pattern="^[\w\-.]+@(stud.)?noroff.no$"
+                  required
+                  title="Cannot contain (Æ, Ø, Å) | Example: email_address@noroff.no / email-address@stud.noroff.no / email.address@noroff.no"
+                />
+              </div>
+              <div class="mb-3 mx-6 w-75">
+                <label for="password" class="form-label">Password *</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="form-control"
+                  placeholder="********"
+                  required
+                  minlength="8"
+                />
+              </div>
+              <div class="mb-3 mx-3 w-75">
+                <label for="avatar" class="form-label">Avatar</label>
+                <input
+                  type="url"
+                  id="avatar"
+                  name="avatar"
+                  class="form-control"
+                  placeholder="Avatar"
+                />
+              </div>
+              <button
+                type="submit"
+                class="btn text-decoration-none cta text-primary display-7 w-50 border-primary form-control mx-auto d-block my-5"
+              >
+                Register
+              </button>
+            </form>
+          </div>
+          <div class="modal-footer p-3"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Login modal -->
+    <div
+      class="modal fade"
+      id="viewLoginModal"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bg-secondary border-primary p-4">
+          <div class="modal-header text-center">
+            <h2
+              class="modal-title display-7 text-primary mx-auto"
+              id="exampleModalLongTitle"
+            >
+              Sign in
+            </h2>
+            <button
+              type="button"
+              class="close text-bg-primary"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form
+              action="./home.html"
+              method="POST"
+              id="login-form"
+              class="text-start d-flex flex-column align-items-center mt-5"
+            >
+              <div class="mb-3 mx-6 w-75">
+                <label for="email" class="form-label">Email *</label>
+                <input
+                  name="email"
+                  type="email"
+                  id="login-email"
+                  class="form-control"
+                  placeholder="email.address@noroff.no"
+                  pattern="^[\w\-.]+@(stud.)?noroff.no$"
+                  required
+                  title="Cannot contain (Æ, Ø, Å) | Example: email_address@noroff.no / email-address@stud.noroff.no / email.address@noroff.no"
+                />
+              </div>
+              <div class="mb-3 mx-6 w-75">
+                <label for="password" class="form-label">Password *</label>
+                <input
+                  type="password"
+                  id="login-password"
+                  name="password"
+                  class="form-control"
+                  placeholder="********"
+                  required
+                  minlength="8"
+                />
+              </div>
+              <div class="text-primary" id="cred-error">
+                Wrong email or password. Please try again!
+              </div>
+              <button
+                type="submit"
+                class="btn text-decoration-none cta text-primary display-7 w-50 border-primary form-control mx-auto d-block my-5"
+              >
+                Sign in
+              </button>
+            </form>
+          </div>
+          <div class="modal-footer p-3"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./src/js/index.mjs" type="module"></script>
+  </body>
+</html>
