@@ -36,8 +36,8 @@ function renderAuction(auctionData) {
   <img
   class="card-img-top p-4"
   src=""
-  alt="Card image cap"
-  onerror="this.onerror=null;this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'"
+  alt="auctioned item"
+  onerror="this.onerror=null;this.src='https://dummyimage.com/640x360/fff/aaa'"
 />
   </div>
 
